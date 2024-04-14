@@ -1,18 +1,21 @@
-# Parthip1kp
-<!-- activity_main.xml -->
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+# import android.os.Bundle;
+import android.widget.TextView;
+import androidx.appcompat.app.AppCompatActivity;
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        android:textSize="24sp"
-        android:layout_centerInParent="true"/>
+public class MainActivity extends AppCompatActivity {
 
-</RelativeLayout>
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        // Find the TextView element by its id
+        TextView textView = findViewById(R.id.textView);
+
+        // Get the string resource for "Hello, World!"
+        String helloWorld = getString(R.string.hello_world);
+
+        // Set the text of the TextView
+        textView.setText(helloWorld);
+    }
+}
